@@ -6,7 +6,6 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    @document = find_document
   end
 
   def new
@@ -27,7 +26,7 @@ class DocumentsController < ApplicationController
   end
 
   def update
-    if @document.update
+    if @document.update(document_params)
       redirect_to @document
     else
       render 'edit'

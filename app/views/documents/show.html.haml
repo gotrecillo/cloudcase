@@ -1,2 +1,6 @@
 %h1= @document.title
 %p= @document.content
+
+= link_to "All Documents", documents_path
+= link_to "Update Document", edit_document_path(@document)
+= link_to "Delete it", document_path(@document), method: :delete, data: { confirm: "Are you sure?" }
